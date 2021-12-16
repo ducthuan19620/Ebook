@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".History">
+
+    <TextView
+        android:id="@+id/textViewTutruyen"
+        android:layout_width="271dp"
+        android:layout_height="27dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="38dp"
+        android:text="Tủ truyện"
+        android:textSize="18dp" />
+
+    <ImageView
+        android:id="@+id/imageViewSetting"
+        android:layout_width="40dp"
+        android:layout_height="41dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="58dp"
+        android:layout_marginTop="29dp"
+        android:layout_marginEnd="12dp"
+        android:layout_toEndOf="@+id/textViewTutruyen"
+        app:srcCompat="@drawable/setting" />
+
+    <TextView
+        android:id="@+id/textViewLichsu"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textViewTutruyen"
+        android:layout_alignLeft="@id/textViewTutruyen"
+        android:layout_marginLeft="5dp"
+        android:layout_marginTop="38dp"
+        android:text="Lịch sử"
+        android:textSize="16dp" />
+
+    <TextView
+        android:id="@+id/textViewDanhdau"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textViewTutruyen"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="38dp"
+        android:layout_toEndOf="@+id/textViewLichsu"
+        android:text="Đánh dấu"
+        android:textSize="16dp" />
+
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="378dp"
+        android:layout_height="253dp"
+        android:layout_below="@+id/textViewDanhdau"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="104dp"
+        app:srcCompat="@drawable/ic_action_bg" />
+
+
+</RelativeLayout>
