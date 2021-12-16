@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Profile">
+
+    <ImageView
+        android:id="@+id/imageViewLogoApp"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:layout_marginStart="116dp"
+        android:layout_marginTop="100dp"
+        android:layout_marginEnd="116dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/metruyenchu_logo" />
+
+    <EditText
+        android:id="@+id/editTextTextPersonName"
+        android:layout_width="252dp"
+        android:layout_height="22dp"
+        android:layout_below="@+id/imageViewLogoApp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="78dp"
+        android:drawableStart="@drawable/ic_action_email"
+        android:ems="10"
+        android:hint="Email"
+        android:inputType="textPersonName"
+        android:textSize="20dp" />
+
+    <EditText
+        android:id="@+id/editTextTextPassword"
+        android:layout_width="252dp"
+        android:layout_height="22dp"
+        android:layout_below="@+id/editTextTextPersonName"
+        android:layout_alignStart="@id/editTextTextPersonName"
+        android:layout_alignLeft="@id/editTextTextPersonName"
+        android:layout_marginStart="-1dp"
+        android:layout_marginLeft="-1dp"
+        android:layout_marginTop="38dp"
+        android:drawableStart="@drawable/ic_action_pass"
+        android:ems="10"
+        android:hint="Password"
+        android:inputType="textPassword" />
+
+    <Button
+        android:id="@+id/buttonLogin"
+        android:layout_width="252dp"
+        android:layout_height="38dp"
+        android:layout_below="@id/editTextTextPassword"
+        android:layout_alignStart="@id/editTextTextPassword"
+        android:layout_alignLeft="@id/editTextTextPassword"
+        android:layout_marginTop="38dp"
+        android:background="@drawable/button_bordering"
+        android:text="Login"
+        android:textAllCaps="false"
+        android:textColor="#FFFFFF"
+        android:textSize="14dp" />
+
+    <Button
+        android:id="@+id/button3"
+        android:layout_width="150dp"
+        android:layout_height="38dp"
+        android:layout_below="@+id/buttonLogin"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="38dp"
+        android:background="@drawable/button_bordering2" />
+
+    <Button
+        android:id="@+id/button4"
+        android:layout_width="150dp"
+        android:layout_height="38dp"
+        android:layout_below="@+id/buttonLogin"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="52dp"
+        android:layout_marginTop="38dp"
+        android:layout_marginEnd="30dp"
+        android:background="@drawable/button_bordering2" />
+
+    <Button
+        android:id="@+id/button5"
+        android:layout_width="252dp"
+        android:layout_height="38dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="77dp"
+        android:layout_marginTop="646dp"
+        android:layout_marginEnd="81dp"
+        android:layout_marginBottom="43dp"
+        android:background="@drawable/button_bordering2"
+        android:text="Register"
+        android:textAllCaps="false"
+        android:textColor="#000000"
+        android:textSize="14dp" />
+
+</RelativeLayout>
