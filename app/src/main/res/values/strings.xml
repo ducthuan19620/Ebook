@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">Ebook</string>
+    <string name="email_address">Email</string>
+    <string name="password">Mật khẩu</string>
+    <string name="login">Đăng nhập</string>
+    <string name="checkin">Đăng kí</string>
+    <string name="noAccount">Nếu chưa có tài khoản, vui lòng đăng kí tài khoản mới</string>
+    <string name="ForgotPassword">Quên mật khẩu</string>
+    <string name="noti">Thông Báo</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>

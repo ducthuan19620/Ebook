@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Activity.ProfileFragment"
+    android:orientation="vertical"
+    android:padding="20dp"
+    android:background="#FFFF"
+    android:id="@+id/layout_profile">
+
+    <TextView
+        android:id="@+id/profile_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:text="Hồ Sơ"
+        android:textSize="20sp"
+        tools:ignore="HardcodedText,RelativeOverlap" />
+
+    <RelativeLayout
+        android:id="@+id/profile_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp">
+
+        <TextView
+            android:id="@+id/text_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Họ và tên"
+            android:textSize="20sp"
+            android:layout_marginLeft="10dp"/>
+
+        <ImageView
+            android:id="@+id/image_profile"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_below="@id/text_name"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/ic_profile"/>
+
+        <ImageView
+            android:id="@+id/image_flower"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/text_name"
+            android:layout_marginStart="120dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/flower" />
+
+        <ImageView
+            android:id="@+id/image_candy"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/candy"
+            android:layout_below="@id/text_name"
+            android:layout_marginStart="190dp"
+            android:layout_marginTop="12dp"/>
+
+        <TextView
+            android:id="@+id/num_flower"
+            android:layout_width="wrap_content"
+            android:layout_height="47dp"
+            android:layout_below="@id/image_flower"
+            android:layout_marginStart="140dp"
+            android:text="0"
+            android:textColor="@color/blue_button"
+            android:textSize="25sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/num_candy"
+            android:layout_width="wrap_content"
+            android:layout_height="47dp"
+            android:layout_below="@id/image_flower"
+            android:layout_marginStart="205dp"
+            android:text="0"
+            android:textColor="@color/red"
+            android:textSize="25sp"
+            android:textStyle="bold" />
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/layout_but"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="10dp">
+
+        <Button
+            android:id="@+id/bonus_button"
+            android:layout_width="130dp"
+            android:layout_height="35dp"
+            android:text="Nhận thưởng"
+            android:textAllCaps="false"
+            android:background="@drawable/button_login"
+            android:textColor="@color/white"
+            android:layout_weight="1"/>
+
+        <Button
+            android:id="@+id/misstion_button"
+            android:layout_width="130dp"
+            android:layout_height="35dp"
+            android:text="Nhiệm vụ"
+            android:textAllCaps="false"
+            android:background="@drawable/button_login"
+            android:textColor="@color/white"
+            android:layout_weight="1"
+            android:layout_marginLeft="50dp"/>
+
+    </LinearLayout>
+
+
+
+</LinearLayout>
