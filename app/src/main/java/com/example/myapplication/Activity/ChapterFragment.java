@@ -1,6 +1,7 @@
 package com.example.myapplication.Activity;
 
 import android.content.Context;
+import android.content.res.Configuration;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -28,7 +29,7 @@ import java.util.Objects;
  * Use the {@link ChapterFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class ChapterFragment extends Fragment implements ChapterAdapter.ItemClickListener {
+public class ChapterFragment extends Fragment implements ChapterAdapter.ItemClickListener{
 
     private RecyclerView rcvChapter;
     private ChapterAdapter chapterAdapter;
@@ -84,6 +85,7 @@ public class ChapterFragment extends Fragment implements ChapterAdapter.ItemClic
         RecyclerView.ItemDecoration itemDecoration = new DividerItemDecoration(getActivity(), DividerItemDecoration.VERTICAL);
         rcvChapter.addItemDecoration(itemDecoration);
 
+
         return view;
     }
 
@@ -101,10 +103,28 @@ public class ChapterFragment extends Fragment implements ChapterAdapter.ItemClic
     public void onItemClick(Chapter chapter) {
         Fragment fragment = BookContentFragment.newInstance(chapter.getName());
 
-           FragmentTransaction transaction = getActivity().getSupportFragmentManager().beginTransaction();
+        int currentOrientation = getResources().getConfiguration().orientation;
+        if (currentOrientation == Configuration.ORIENTATION_LANDSCAPE) {
+            FragmentTransaction transaction = getActivity().getSupportFragmentManager().beginTransaction();
+            //transaction.hide(getActivity().getSupportFragmentManager().findFragmentByTag("chapter_fragment"));
+            transaction.replace(R.id.book_content, fragment);
+            transaction.addToBackStack(null);
+            transaction.commit();
+        }
+        else {
+            FragmentTransaction transaction = getActivity().getSupportFragmentManager().beginTransaction();
             //transaction.hide(getActivity().getSupportFragmentManager().findFragmentByTag("chapter_fragment"));
             transaction.replace(R.id.bookDetail_layout, fragment);
             transaction.addToBackStack(null);
             transaction.commit();
+        }
+
+        /*   FragmentTransaction transaction = getActivity().getSupportFragmentManager().beginTransaction();
+            //transaction.hide(getActivity().getSupportFragmentManager().findFragmentByTag("chapter_fragment"));
+            transaction.replace(R.id.bookDetail_layout, fragment);
+            transaction.addToBackStack(null);
+            transaction.commit();*/
+
     }
+
 }
