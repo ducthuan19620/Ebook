@@ -3,7 +3,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Activity.BookContentFragment">
+    tools:context=".Activity.BookContentFragment"
+    android:padding="20dp">
+
+    <Button
+        android:id="@+id/backtochapter"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:background="@drawable/ic_chapterlist"/>
 
     <TextView
         android:id="@+id/content_book"

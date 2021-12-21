@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.widget.TextView;
 
@@ -29,7 +30,7 @@ public class DetailBookActivity extends AppCompatActivity {
             manager.beginTransaction()
                     .show((Objects.requireNonNull(manager.findFragmentById(R.id.list_chapter))))
                     .hide((Objects.requireNonNull(manager.findFragmentById(R.id.book_content))))
-                    //.addToBackStack(null)
+                    .addToBackStack(ChapterFragment.class.getName())
                     .commit();
         }
 
@@ -40,8 +41,12 @@ public class DetailBookActivity extends AppCompatActivity {
                     .show((Objects.requireNonNull(manager.findFragmentById(R.id.book_content))))
                     .commit();
         }
-
-
     }
 
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+            Intent intent = new Intent(this, MainActivity.class);
+            startActivity(intent);
+    }
 }

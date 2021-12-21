@@ -31,6 +31,7 @@ import java.util.Objects;
  */
 public class ChapterFragment extends Fragment implements ChapterAdapter.ItemClickListener{
 
+    private String chapterFragment = ChapterFragment.class.getName();
     private RecyclerView rcvChapter;
     private ChapterAdapter chapterAdapter;
 
@@ -85,7 +86,6 @@ public class ChapterFragment extends Fragment implements ChapterAdapter.ItemClic
         RecyclerView.ItemDecoration itemDecoration = new DividerItemDecoration(getActivity(), DividerItemDecoration.VERTICAL);
         rcvChapter.addItemDecoration(itemDecoration);
 
-
         return view;
     }
 
@@ -108,14 +108,14 @@ public class ChapterFragment extends Fragment implements ChapterAdapter.ItemClic
             FragmentTransaction transaction = getActivity().getSupportFragmentManager().beginTransaction();
             //transaction.hide(getActivity().getSupportFragmentManager().findFragmentByTag("chapter_fragment"));
             transaction.replace(R.id.book_content, fragment);
-            transaction.addToBackStack(null);
+            transaction.addToBackStack(chapterFragment);
             transaction.commit();
         }
         else {
             FragmentTransaction transaction = getActivity().getSupportFragmentManager().beginTransaction();
             //transaction.hide(getActivity().getSupportFragmentManager().findFragmentByTag("chapter_fragment"));
             transaction.replace(R.id.bookDetail_layout, fragment);
-            transaction.addToBackStack(null);
+            //transaction.addToBackStack();
             transaction.commit();
         }
 

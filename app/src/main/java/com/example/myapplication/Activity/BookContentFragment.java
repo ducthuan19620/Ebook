@@ -1,12 +1,15 @@
 package com.example.myapplication.Activity;
 
+import android.content.res.Configuration;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.TextView;
 
 import com.example.myapplication.R;
@@ -57,11 +60,31 @@ public class BookContentFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View view = inflater.inflate(R.layout.fragment_book_content, container, false);
+        View v = inflater.inflate(R.layout.fragment_book_content, container, false);
 
-        TextView contentBook = view.findViewById(R.id.content_book);
+        TextView contentBook = v.findViewById(R.id.content_book);
         contentBook.setText(mParam1);
 
-        return view;
+        Button button = v.findViewById(R.id.backtochapter);
+        int currentOrientation = getResources().getConfiguration().orientation;
+        if (currentOrientation == Configuration.ORIENTATION_LANDSCAPE) {
+            // Landscape
+            button.setVisibility(View.INVISIBLE);
+        }
+        else {
+            // Portrait
+            button.setVisibility(View.VISIBLE);
+        }
+
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                FragmentTransaction transaction = getActivity().getSupportFragmentManager().beginTransaction();
+                transaction.replace(R.id.bookDetail_layout, new ChapterFragment());
+                //transaction.addToBackStack();
+                transaction.commit();
+            }
+        });
+        return v;
     }
 }
